@@ -1,0 +1,14 @@
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\obj\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\obj\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.AssemblyInfoInputs.cache
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\obj\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.AssemblyInfo.cs
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\obj\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.csproj.CoreCompileInputs.cache
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\bin\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.exe
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\bin\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.deps.json
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\bin\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.runtimeconfig.json
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\bin\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.dll
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\bin\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.pdb
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\obj\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.dll
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\obj\Debug\net8.0\refint\DGD208-BerilSudeÖzyılmaz.dll
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\obj\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.pdb
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\obj\Debug\net8.0\DGD208-BerilSudeÖzyılmaz.genruntimeconfig.cache
+C:\Users\Beril\source\repos\DGD208-BerilSudeÖzyılmaz\DGD208-BerilSudeÖzyılmaz\obj\Debug\net8.0\ref\DGD208-BerilSudeÖzyılmaz.dll

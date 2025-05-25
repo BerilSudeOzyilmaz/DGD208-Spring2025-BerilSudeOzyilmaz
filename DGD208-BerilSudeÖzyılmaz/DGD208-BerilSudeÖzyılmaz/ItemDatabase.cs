@@ -4,7 +4,7 @@ public static class ItemDatabase
     {
         // Foods
         new Item { 
-            Name = "Kibble", 
+            Name = "Chew Bone", 
             Type = ItemType.Food, 
             CompatibleWith = new List<PetType> { PetType.Dog }, 
             AffectedStat = PetStat.Hunger, 
@@ -12,7 +12,7 @@ public static class ItemDatabase
             Duration = 2.5f  // Takes 2.5 seconds to eat
         },
         new Item { 
-            Name = "Premium Dog Food", 
+            Name = "Beef Dry Food", 
             Type = ItemType.Food, 
             CompatibleWith = new List<PetType> { PetType.Dog }, 
             AffectedStat = PetStat.Hunger, 
@@ -20,7 +20,7 @@ public static class ItemDatabase
             Duration = 3.0f  // Takes 3 seconds to eat
         },
         new Item { 
-            Name = "Cat Food", 
+            Name = "Chicken Wet Food", 
             Type = ItemType.Food, 
             CompatibleWith = new List<PetType> { PetType.Cat }, 
             AffectedStat = PetStat.Hunger, 
@@ -28,15 +28,15 @@ public static class ItemDatabase
             Duration = 2.0f
         },
         new Item { 
-            Name = "Tuna Treat", 
+            Name = "Salmon Dry Food", 
             Type = ItemType.Food, 
             CompatibleWith = new List<PetType> { PetType.Cat }, 
             AffectedStat = PetStat.Hunger, 
             EffectAmount = 25,
-            Duration = 1.5f  // Quick treat
+            Duration = 3.0f
         },
         new Item { 
-            Name = "Bird Seed", 
+            Name = "Seed Mix", 
             Type = ItemType.Food, 
             CompatibleWith = new List<PetType> { PetType.Bird }, 
             AffectedStat = PetStat.Hunger, 
@@ -44,7 +44,7 @@ public static class ItemDatabase
             Duration = 1.0f
         },
         new Item { 
-            Name = "Fruit Mix", 
+            Name = "Fruit Bite", 
             Type = ItemType.Food, 
             CompatibleWith = new List<PetType> { PetType.Bird }, 
             AffectedStat = PetStat.Hunger, 
@@ -52,20 +52,20 @@ public static class ItemDatabase
             Duration = 2.0f
         },
         new Item { 
-            Name = "Carrots", 
+            Name = "Carrot", 
             Type = ItemType.Food, 
             CompatibleWith = new List<PetType> { PetType.Rabbit }, 
             AffectedStat = PetStat.Hunger, 
             EffectAmount = 15,
-            Duration = 3.0f  // Takes time to chew
+            Duration = 3.0f
         },
         new Item { 
-            Name = "Leafy Greens", 
+            Name = "Lettuce", 
             Type = ItemType.Food, 
             CompatibleWith = new List<PetType> { PetType.Rabbit }, 
             AffectedStat = PetStat.Hunger, 
             EffectAmount = 25,
-            Duration = 4.0f  // Lots to munch through
+            Duration = 4.0f
         },
         
         // Universal Foods
@@ -88,15 +88,15 @@ public static class ItemDatabase
         
         // Toys
         new Item { 
-            Name = "Tennis Ball", 
+            Name = "Rope Tug Toy", 
             Type = ItemType.Toy, 
             CompatibleWith = new List<PetType> { PetType.Dog }, 
             AffectedStat = PetStat.Fun, 
             EffectAmount = 20,
-            Duration = 4.0f  // Playing fetch takes time
+            Duration = 4.0f
         },
         new Item { 
-            Name = "Squeaky Toy", 
+            Name = "Plush Toy", 
             Type = ItemType.Toy, 
             CompatibleWith = new List<PetType> { PetType.Dog }, 
             AffectedStat = PetStat.Fun, 
@@ -104,15 +104,15 @@ public static class ItemDatabase
             Duration = 2.5f
         },
         new Item { 
-            Name = "String Toy", 
+            Name = "Feather Wand", 
             Type = ItemType.Toy, 
             CompatibleWith = new List<PetType> { PetType.Cat }, 
             AffectedStat = PetStat.Fun, 
             EffectAmount = 20,
-            Duration = 3.0f  // Playing with string
+            Duration = 3.0f  // Playing with feather
         },
         new Item { 
-            Name = "Toy Mouse", 
+            Name = "Laser Pointer", 
             Type = ItemType.Toy, 
             CompatibleWith = new List<PetType> { PetType.Cat }, 
             AffectedStat = PetStat.Fun, 
@@ -128,7 +128,7 @@ public static class ItemDatabase
             Duration = 3.0f  // Swinging
         },
         new Item { 
-            Name = "Bell", 
+            Name = "Mirror", 
             Type = ItemType.Toy, 
             CompatibleWith = new List<PetType> { PetType.Bird }, 
             AffectedStat = PetStat.Fun, 
@@ -136,12 +136,12 @@ public static class ItemDatabase
             Duration = 1.5f
         },
         new Item { 
-            Name = "Chew Toy", 
+            Name = "Willow Stick", 
             Type = ItemType.Toy, 
             CompatibleWith = new List<PetType> { PetType.Rabbit }, 
             AffectedStat = PetStat.Fun, 
             EffectAmount = 15,
-            Duration = 3.5f  // Lots of chewing
+            Duration = 3.5f
         },
         new Item { 
             Name = "Tunnel", 
@@ -164,7 +164,7 @@ public static class ItemDatabase
         
         // Sleep Items
         new Item { 
-            Name = "Comfy Bed", 
+            Name = "Fluffy Bed", 
             Type = ItemType.Toy, 
             CompatibleWith = new List<PetType> { PetType.Dog, PetType.Cat }, 
             AffectedStat = PetStat.Sleep, 
@@ -172,7 +172,7 @@ public static class ItemDatabase
             Duration = 6.0f  // Takes time to fall asleep
         },
         new Item { 
-            Name = "Pet Blanket", 
+            Name = "Sof Blanket", 
             Type = ItemType.Toy, 
             CompatibleWith = new List<PetType> { PetType.Dog, PetType.Cat, PetType.Rabbit }, 
             AffectedStat = PetStat.Sleep, 

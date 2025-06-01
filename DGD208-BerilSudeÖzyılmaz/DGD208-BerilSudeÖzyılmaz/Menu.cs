@@ -29,7 +29,7 @@ public class Menu<T>
     {
         if (_items.Count == 0)
         {
-            Console.WriteLine($"No items available in {_title}. Press any key to continue...");
+            Console.WriteLine($"No items available in {_title}. Press any key to continue.");
             Console.ReadKey();
             return default;
         }
@@ -53,21 +53,21 @@ public class Menu<T>
 
             // Get user input
             string input = Console.ReadLine();
-            
+
             // Try to parse the input
             if (int.TryParse(input, out int selection))
             {
                 // Check for "Go Back" option
                 if (selection == 0)
                     return default; // Return default value of T to indicate backing out
-                
+
                 // Check if selection is valid
                 if (selection > 0 && selection <= _items.Count)
                 {
                     return _items[selection - 1];
                 }
             }
-            
+
             Console.WriteLine("Invalid selection. Press any key to try again.");
             Console.ReadKey();
         }

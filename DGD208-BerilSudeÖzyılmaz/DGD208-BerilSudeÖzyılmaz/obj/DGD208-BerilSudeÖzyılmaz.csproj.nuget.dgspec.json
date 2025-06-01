@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Beril\\OneDrive\\Masaüstü\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz.csproj": {}
+    "C:\\Users\\Beril\\Documents\\GitHub\\DGD208-Spring2025-BerilSudeOzyilmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Beril\\OneDrive\\Masaüstü\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz.csproj": {
+    "C:\\Users\\Beril\\Documents\\GitHub\\DGD208-Spring2025-BerilSudeOzyilmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Beril\\OneDrive\\Masaüstü\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz.csproj",
+        "projectUniqueName": "C:\\Users\\Beril\\Documents\\GitHub\\DGD208-Spring2025-BerilSudeOzyilmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz.csproj",
         "projectName": "DGD208-BerilSudeÖzyılmaz",
-        "projectPath": "C:\\Users\\Beril\\OneDrive\\Masaüstü\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz.csproj",
+        "projectPath": "C:\\Users\\Beril\\Documents\\GitHub\\DGD208-Spring2025-BerilSudeOzyilmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz.csproj",
         "packagesPath": "C:\\Users\\Beril\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Beril\\OneDrive\\Masaüstü\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz\\obj\\",
+        "outputPath": "C:\\Users\\Beril\\Documents\\GitHub\\DGD208-Spring2025-BerilSudeOzyilmaz\\DGD208-BerilSudeÖzyılmaz\\DGD208-BerilSudeÖzyılmaz\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

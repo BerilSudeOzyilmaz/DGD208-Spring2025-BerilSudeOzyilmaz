@@ -43,7 +43,8 @@
             "- Console-based virtual pet care simulation\r\n" +
             "- Inspired by the Tamagotchi of the 90s\r\n\r\n" +
 
-            "Key Features:\r\n- 4 different types of pets:\r\n" +
+            "Key Features:\r\n" +
+            "- 4 different types of pets:\r\n" +
             "  - Dog  | Cat  | Bird | Rabbit\r\n" +
             "- The 3 basic stat you need to manage:\r\n" +
             "  - Hunger : Feed with appropriate food\r\n" +
@@ -53,13 +54,16 @@
             "Game Mechanics:\r\n" +
             "- Stats decrease over time (1 point every 5 seconds)\r\n" +
             "- If a stat drops to 0, the pet dies!\r\n" +
-            "- Dead pets do not come back\r\n\r\nControls\r\n" +
-            "- Use number keys in menus\r\n- Automatic recording feature (every 5 minutes)\r\n" +
+            "- Dead pets do not come back\r\n\r\n" +
+
+            "Controls\r\n" +
+            "- Use number keys in menus\r\n" +
+            "- Automatic recording feature (every 5 minutes)\r\n" +
             "- Manual recording/uploading options\r\n\r\n" +
 
             "How to Play\r\n" +
             "1. Get pet from the main menu\r\n" +
-            "2. Check their status with �View Pads�\r\n" +
+            "2. Check their status with View Pets\r\n" +
             "3. Use the appropriate item for dropped stats\r\n" +
             "4. Try to keep all pets alive");
 
@@ -258,21 +262,65 @@
             Console.WriteLine(pet.GetAsciiArt());
             Console.WriteLine($"\nCurrent Stats:\n{pet}");
 
-            var compatibleItems = ItemDatabase.AllItems
+            var allCompatibleItems = ItemDatabase.AllItems
                 .Where(item => item.CompatibleWith.Contains(pet.Type))
                 .ToList();
 
-            if (compatibleItems.Count == 0)
+            if (allCompatibleItems.Count == 0)
             {
                 Console.WriteLine("No items available for this pet type!");
                 Console.ReadKey();
                 return;
             }
 
-            var itemMenu = new Menu<Item>("Select Item", compatibleItems,
-                i => $"{i.Name} (+{i.EffectAmount} {i.AffectedStat}, {i.Duration}s)");
-            var selectedItem = itemMenu.ShowAndGetSelection();
-            if (selectedItem == null) return;
+
+            var boredItems = allCompatibleItems
+                .Where(item => pet.IsBoredWithItem(item))
+                .ToList();
+
+
+            var availableItems = allCompatibleItems
+                .Where(item => !pet.IsBoredWithItem(item))
+                .ToList();
+
+
+            var displayItems = allCompatibleItems
+                .Select(item => new {
+                    Item = item,
+                    IsBored = pet.IsBoredWithItem(item)
+                })
+                .ToList();
+
+
+            for (int i = 0; i < displayItems.Count; i++)
+            {
+                var item = displayItems[i];
+                string status = item.IsBored ? "[BORED - Wait 2 mins]" : "";
+                Console.WriteLine($"{i + 1}. {item.Item.Name} (+{item.Item.EffectAmount} {item.Item.AffectedStat}, {item.Item.Duration}s) {status}");
+            }
+
+            Console.WriteLine("\n0. Back to pet menu");
+            Console.Write("\nSelect an item: ");
+
+            if (!int.TryParse(Console.ReadLine(), out int selection) || selection < 0 || selection > displayItems.Count)
+            {
+                Console.WriteLine("Invalid selection! Press any key to try again.");
+                Console.ReadKey();
+                continue;
+            }
+
+            if (selection == 0) break;
+
+            var selectedItem = displayItems[selection - 1].Item;
+            bool isBored = displayItems[selection - 1].IsBored;
+
+            if (isBored)
+            {
+                Console.WriteLine($"{pet.Name} is bored with {selectedItem.Name} and won't accept it right now!");
+                Console.WriteLine("Please select another item.");
+                Console.ReadKey();
+                continue;
+            }
 
             Console.Clear();
             Console.WriteLine($"Using {selectedItem.Name} on {pet.Name}...");
@@ -280,6 +328,7 @@
             Console.WriteLine($"\nBefore:\n{pet}");
 
             await Task.Delay((int)(selectedItem.Duration * 1000));
+
 
             switch (selectedItem.AffectedStat)
             {
@@ -294,18 +343,17 @@
                     break;
             }
 
+
+            pet.RecordItemUsage(selectedItem);
+
             Console.Clear();
             Console.WriteLine($"~Item Used on {pet.Name}~");
             Console.WriteLine(pet.GetAsciiArt());
             Console.WriteLine($"\nAfter:\n{pet}");
             Console.WriteLine($"\n{pet.Name}'s {selectedItem.AffectedStat} increased by {selectedItem.EffectAmount}!");
 
-            Console.WriteLine("\n1. Use another item");
-            Console.WriteLine("0. Back to pet menu");
-            Console.Write("\nSelect an option: ");
-
-            string continueChoice = Console.ReadLine();
-            if (continueChoice == "0") break;
+            Console.WriteLine("\nPress any key to continue.");
+            Console.ReadKey();
         }
     }
 
@@ -407,8 +455,27 @@
 
     private bool ConfirmDeletion(string saveName)
     {
-        Console.Write($"Are you sure you want to delete '{saveName}'? (yes/no): ");
-        return Console.ReadLine()?.ToLower() == "yes";
+        while (true)
+        {
+            Console.Clear();
+            Console.Write($"Are you sure you want to delete '{saveName}'? (yes/no): ");
+            string response = Console.ReadLine()?.ToLower().Trim();
+
+            switch (response)
+            {
+                case "yes":
+                    return true;
+                case "no":
+                    Console.WriteLine("Deletion cancelled.");
+                    Console.WriteLine("Press any key to continue.");
+                    return false;
+                default:
+                    Console.WriteLine("Invalid input! Please answer with 'yes' or 'no'.");
+                    Console.WriteLine("Press any key to try again.");
+                    Console.ReadKey();
+                    break;
+            }
+        }
     }
 
 

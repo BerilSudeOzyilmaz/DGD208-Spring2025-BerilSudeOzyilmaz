@@ -9,6 +9,8 @@
 
     public event Action<Pet> OnPetDied;
 
+    public event Action<string> OnNotification;
+
     public Pet(string name, PetType type)
     {
         Name = name;
@@ -38,6 +40,41 @@
                $"Hunger: {Hunger}/100 | Sleep: {Sleep}/100 | Fun: {Fun}/100\n";
     }
 
+    private Item _lastUsedItem;
+    private int _sameItemUseCount;
+    private bool _isBored;
+    private DateTime _boredUntil;
+    private List<string> _boredItems = new List<string>();
+
+    public bool IsBoredWithItem(Item item)
+    {
+
+        if (_boredItems.Contains(item.Name) && DateTime.Now >= _boredUntil)
+        {
+            _boredItems.Remove(item.Name);
+        }
+
+        return _boredItems.Contains(item.Name);
+    }
+
+    public void RecordItemUsage(Item item)
+    {
+
+        if (_lastUsedItem?.Name != item.Name)
+        {
+            _sameItemUseCount = 0;
+        }
+
+        _lastUsedItem = item;
+        _sameItemUseCount++;
+
+        if (_sameItemUseCount >= 3)
+        {
+            _boredItems.Add(item.Name);
+            _boredUntil = DateTime.Now.AddMinutes(2);
+            OnNotification?.Invoke($"{Name} is bored with {item.Name} and won't accept it!");
+        }
+    }
 
     public string GetAsciiArt()
     {

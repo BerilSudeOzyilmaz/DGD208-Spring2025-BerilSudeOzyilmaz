@@ -37,7 +37,7 @@ public class Menu<T>
         while (true)
         {
             Console.Clear();
-            Console.WriteLine($"=== {_title} ===");
+            Console.WriteLine($"~{_title}~");
             Console.WriteLine();
 
             // Display menu items with numbers

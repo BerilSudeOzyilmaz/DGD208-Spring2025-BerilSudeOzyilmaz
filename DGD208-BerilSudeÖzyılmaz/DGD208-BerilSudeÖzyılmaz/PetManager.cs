@@ -19,6 +19,8 @@
             OnNotification?.Invoke($"{deadPet.Name} has died!");
         };
 
+        pet.OnNotification += message => OnNotification?.Invoke(message);
+
         Task.Run(() => pet.DecreaseStatsAsync(cts.Token));
     }
 
@@ -58,5 +60,4 @@
             AddPet(pet);
         }
     }
-
 }
